@@ -27,7 +27,7 @@ namespace API.Controllers
             if (await UserExits(registerDto.Username)) return BadRequest("Username is taken!");
 
             using var hmac = new HMACSHA512();
-            var user = new AppUser()
+            var user = new AppUser
             {
                 UserName = registerDto.Username.ToLower(),
                 PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
