@@ -18,6 +18,12 @@ namespace API.Controllers
             _context = context;
         }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<AppUser>> GetUser([FromRoute] int id)
+        {
+            return await _context.Users.FindAsync(id);
+        }
+
         [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
@@ -25,12 +31,6 @@ namespace API.Controllers
             var users = await _context.Users.ToListAsync();
 
             return users;
-        }
-
-        [HttpGet("{id}")]
-        public async Task<ActionResult<AppUser>> GetUser([FromRoute] int id)
-        {
-            return await _context.Users.FindAsync(id);
         }
     }
 }
