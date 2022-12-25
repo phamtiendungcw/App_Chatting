@@ -1,7 +1,7 @@
 # APP_Chatting is Web API
 
 This project was generated with [.NET Core](https://learn.microsoft.com/en-us/dotnet/fundamentals/) version 7.0.0.
-This Client UI [Client](https://github.com/phamtiendungcw/App_ChattingUI).
+This UI [Client](https://github.com/phamtiendungcw/App_ChattingUI).
 
 ## Development server
 
